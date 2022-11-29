@@ -3,3 +3,5 @@ pixie_api_env
 .DS_Store
 .vscode
 .env
+pixie.db
+
