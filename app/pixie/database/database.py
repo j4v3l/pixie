@@ -13,6 +13,7 @@ Base = declarative_base()
 
 
 def get_db():
+    """Creates a database session that is called throughout the code """
     db = SessionLocal()
 
     try:

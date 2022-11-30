@@ -6,6 +6,7 @@ from .database import Base
 
 
 class User(Base):
+    """Creates the users table in the database"""
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -17,6 +18,7 @@ class User(Base):
 
 
 class Item(Base):
+    """Creates the items tables in the database"""
     __tablename__ = "items"
 
     id = Column(Integer, primary_key=True, index=True)

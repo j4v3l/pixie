@@ -4,6 +4,7 @@ pwd_cxt = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
 class Hash():
+    """Encrypting the password before it gets added to the database"""
     def bcrypt(password: str):
         return pwd_cxt.hash(password)
 

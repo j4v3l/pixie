@@ -8,6 +8,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 
 def create_access_token(data: dict):
+    """Creates JSON Web Token for each user for {X} minutes"""
     to_encode = data.copy()
     expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     to_encode.update({"exp": expire})
@@ -16,6 +17,7 @@ def create_access_token(data: dict):
 
 
 def verify_token(token: str, credentials_exception):
+    """Verifies the JSON Web Token for validation"""
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         email: str = payload.get("sub")
